@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <script>
+    var quantity = 0;
+
+    window.onload = function () {
+      document.getElementById("quantidade").value = quantity;
+    };
+    const minusButton = document.getElementById("sub");
+    const plusButton = document.getElementById("add");
+    function add() {
+      quantity = quantity + 1;
+      document.getElementById("quantidade").value = quantity;
+    }
+
+    function sub() {
+      if (quantity > 0) {
+        quantity = quantity - 1;
+      }
+      document.getElementById("quantidade").value = quantity;
+    }
+  </script>
+
+  <head>
+    <title>Desafio</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="central">
+      <div class="header">
+        <p class="title">Formulário</p>
+        <p class="title">para compra de</p>
+        <p class="title-bold">Pacote de adesivos</p>
+      </div>
+      <div class="categoria">
+        <p class="question">Quais adesivos:</p>
+        <div class="sticker-select"><input type="checkbox" /> React</div>
+        <div class="sticker-select"><input type="checkbox" /> Vue</div>
+        <div class="sticker-select"><input type="checkbox" /> Angular</div>
+
+        <p class="question">Quantos adesivos de cada?</p>
+        <button onclick="sub()" class="number-button" id="sub">-</button>
+        <input class="number-input" id="quantidade" type="text" />
+        <button onclick="add()" class="number-button" id="add">+</button>
+        <p class="question">Observações:</p>
+        <textarea
+          class="observacoes"
+          placeholder="Alguma dúvida? Recado?"
+        ></textarea>
+      </div>
+
+      <div class="footer">
+        <button class="submit-button" >ENVIAR</button>
+      </div>
+    </div>
+  </body>
+</html>
